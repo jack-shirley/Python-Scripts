@@ -10,8 +10,9 @@ api_key = '***API_KEY***'
 owm = pyowm.OWM(api_key) #valide api key w/ server
 
 # Customize these variables
-from_email = '***FROM_EMAIL***'
+login_email = '***EMAIL***'
 password = '***PASSWORD***'
+from_email = '***FROM_EMAIL***'
 to_email = '***TO_EMAIL***'
 location = 'Fort Worth, USA' #Change to anything you want
 
@@ -35,5 +36,5 @@ Have a wonderful day.'
 # Start the SMTP server and send message
 smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
 smtpObj.starttls()
-smtpObj.login(from_email, password)
+smtpObj.login(login_email, password)
 smtpObj.sendmail(from_email, to_email, subject + message)
